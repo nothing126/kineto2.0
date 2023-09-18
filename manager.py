@@ -57,6 +57,7 @@ class BotManager:
         def problem_ru(message):
             chat_id = message.chat.id
             user_id = message.from_user.id
+#получение имени пользователя из словаря 
             user_name = self.user_data[user_id]['name']
 
             self.bot.send_message(chat_id, f"{user_name}, если у вас есть существующие медицинские проблемы, "
@@ -84,6 +85,7 @@ class BotManager:
         def discomfort_ru(message):
             chat_id = message.chat.id
             user_id = message.from_user.id
+#имя из словаря 
             user_name = self.user_data[user_id]['name']
 
             self.bot.send_message(chat_id, f"{user_name},Пожалуйста, опишите характер дискомфорта и "
@@ -111,6 +113,7 @@ class BotManager:
         def problem_ru(message):
             chat_id = message.chat.id
             user_id = message.from_user.id
+#получение причины обращения 
             self.user_data[user_id]["cause"] = message.text
             user_name = self.user_data[user_id]['name']
 
